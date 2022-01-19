@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	
+	int k;
+	cin>>k;
+	int Xa, Xb, Xc;
+	vector<int> vec;
+	int index = 0;
+	for(int i=0;i<k;i++){
+		cin>>Xa>>Xb>>Xc;
+		vec.push_back(Xa);
+		vec.push_back(Xb);
+		vec.push_back(Xc);
+	}
+	
+	while(k>0){
+		for(int i=0;i<vec.size();i+=3){
+			if(vec[i]>50 && vec[i]>vec[i+1] && vec[i]>vec[i+2]){
+				cout<<"A"<<endl;
+			}
+			
+			else if(vec[i+1]>50 && vec[i+1]>vec[i] && vec[i+1]>vec[i+2]){
+				cout<<"B"<<endl;
+			}
+			
+			else if(vec[i+2]>50 && vec[i+2]>vec[i+1] && vec[i+2]>vec[i]){
+				cout<<"C"<<endl;
+			}
+			
+			else{
+				cout<<"NOTA"<<endl;
+			}
+			k--;
+		}
+			
+	}
+}
