@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	
+	int turns;
+	cin>>turns;
+	int people = turns;
+	int num_of_players[turns];
+	for(int i=0; i<turns;i++){
+		cin>>num_of_players[i];
+	}
+	
+	while(people>0){
+		for(int i=0; i<turns; i++){
+			int cards_left;
+			cards_left = 52/num_of_players[i];
+			int ans = 52-(cards_left*num_of_players[i]);
+			cout<<ans<<endl;
+			people--;
+		}
+	}
+}
